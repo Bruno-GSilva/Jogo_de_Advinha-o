@@ -4,6 +4,7 @@ const acertou = document.getElementById("acertou");
 const errou = document.getElementById("errou");
 //resposta
 const respostaCerta = document.getElementById("respostaCerta");
+const respostaCerta1 = document.getElementById("respostaCerta1");
 //btns
 const btn1 = document.getElementById("tryAgain");
 const btn2 = document.getElementById("try");
@@ -31,25 +32,27 @@ let numeroCerto = randomNum;
 
 let palpites = [];
 
-function exibirVitoria() {
+let exibirVitoria = () => {
   acertou.style.zIndex = 2;
   acertou.style.display = "block";
   errou.style.display = "none";
   pensando.style.display = "none";
   text1.style.display = "block";
   text2.style.display = "none";
+  text3.style.display = "none"
 }
-function exibirDerrota() {
+let exibirDerrota = () => { 
   errou.style.zIndex = 2;
   errou.style.display = "block";
   acertou.style.display = "none";
   pensando.style.display = "none";
   text1.style.display = "none";
   text2.style.display = "block";
+  text3.style.display = "none"
   btn1.style.display = "block";
   tentativa.style.display = "none";
 }
-function exibirPensando() {
+let exibirPensando = () => {
   pensando.style.zIndex = 2;
   pensando.style.display = "block";
   acertou.style.display = "none";
@@ -60,21 +63,22 @@ function exibirPensando() {
   tentativa.style.display = "flex";
 }
 
-
-function verificarNum(num) {
+verificarNum = (num) => {
   if (palpites.includes(num)) {
-    console.log("esse voce ja tentou");
-  } else {
+    console.log("esse voce ja tentou")
+  } 
+  else {
     palpites.push(Number(palpite.value));
-    Mostrarpalpites.append(`${palpite.value} - `)
+    if (palpites.length <= 9) {
+      Mostrarpalpites.append(palpite.value + " - ")
+    } else {
+      Mostrarpalpites.append(palpite.value)
+    }
   }
   if (num == numeroCerto) {
     exibirVitoria()
-    respostaCerta.append(Number(numeroCerto))
-  }
-  if (tentativasEx == true) {
-    exibirDerrota()
-    respostaCerta.append(Number(numeroCerto))
+    setTimeout(function(){window.location.reload(true)},3500)
+    respostaCerta.innerHTML = (Number(numeroCerto))
   }
 }
 
@@ -82,27 +86,30 @@ btn2.addEventListener("click", function (event) {
   event.preventDefault();
 
   verificarNum(Number(palpite.value));
-  if (palpites.length <= 1) {
-    tentativas++;
-  } else {
-    return console.log("voce exedeu as tentativas"), (tentativasEx = true);
+
+  if (palpites.length <= 9) {
+    tentativas++
+  }
+  else {
+    tentativasEx = true;
+    exibirDerrota()
+    respostaCerta1.innerHTML = (Number(numeroCerto))
+    console.log("voce exedeu as tentativas")
   }
 
   if (palpite.value < numeroCerto) {
-    // text3.append("Eu acho que e um pouco maior ...")
-    alert("Eu acho que e um pouco maior ...")
+    text3.innerHTML = ("Eu acho que e um pouco maior ...")
   }
   if (palpite.value > numeroCerto) {
-    // text3.append("Eu acho que e um pouco menor ...")
-    alert("Eu acho que e um pouco menor ...")
+    text3.innerHTML = ("Eu acho que e um pouco menor ...")
   }
 
 });
 
 btn1.addEventListener("click", function () {
   tentativas = 0;
+  tentativasEx = false
+  palpites.length = 0;
   exibirPensando()
-  while (palpites.length > 0) {
-    palpites.pop(1)
-  }
+  Mostrarpalpites.innerHTML = " "
 })
