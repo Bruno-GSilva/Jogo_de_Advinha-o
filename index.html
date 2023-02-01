@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>helloBia</title>
+    <link rel="stylesheet" href="/style/style.css" />
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body>
+    <div id="card">
+      <div id="row">
+        <div>
+          <h3>Em que número <span>Bia</span> está pensando?</h3>
+        </div>
+        <div id="images">
+          <img src="style/images/pensando.png" id="pensando" />
+          <img src="style/images/acertou.png" id="acertou" />
+          <img src="style/images/errou.png" id="errou" />
+        </div>
+      </div>
+      <div id="colum">
+        
+        <span class="text1">
+          <p id="textAcertou">
+            Parabéns o número é: <span id="respostaCerta"></span>
+          </p>
+        </span>
+
+        <span class="text2">
+          <p id="textErrou">
+            Você não acertou, o número era: <span id="respostaCerta"></span>
+          </p>
+        </span>
+
+        <span class="text3">
+          <p id="textAjuda"></p>
+        </span>
+
+        <div id="tentativa">
+          <label for="text"></label>
+          <input type="text" id="palpite" />
+          <button id="try">
+            <p>Adivinhar</p>
+          </button>
+        </div>
+
+        <button id="tryAgain">Tentar Novamente</button>
+
+        <span class="palpites">
+          <p>Seus palpites:</p>
+          <p id="palpites">23 - 50 - 35 - 40 - 1</p>
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

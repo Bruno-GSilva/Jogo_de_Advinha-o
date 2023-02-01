@@ -1,0 +1,148 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --bg-color: #5b5b5b;
+  --font-color-black: #000000;
+  --font-color-yellow: #ffb431;
+  --bg-color-white: #ffffff;
+  --bg-color-red: #de5540;
+  --font-sizeBig: 48px;
+  --font-sizeMedium: 26px;
+  --font-sizeSmall: 18px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+#card {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: var(--bg-color-white);
+  border-radius: 10px;
+}
+
+#colum{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 310px;
+  gap: 10px;
+}
+
+#card h3 {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  max-width: 240px;
+  font-size: var(--font-sizeBig);
+}
+#card #row span {
+  color: var(--font-color-yellow);
+}
+#card #images * {
+  position: absolute;
+  left: 220px;
+  top: 0px;
+}
+
+#card .text1 p{
+  display: none;
+  font-size: var(--font-sizeSmall);
+}
+#card .text2 p{
+  display: none;
+  font-size: var(--font-sizeSmall);
+}
+#card .text3 p{
+  display: block;
+  font-size: var(--font-sizeSmall);
+}
+
+#card #respostaCerta {
+  color: var(--font-color-yellow);
+}
+#card .palpites {
+  text-align: center;
+  font-size: var(--font-sizeSmall);
+}
+#card .palpites #palpites {
+  color: var(--font-color-yellow);
+}
+
+[type="text"] {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: var(--font-sizeMedium);
+}
+
+#card #tentativa {
+  display: flex;
+  gap: 15px;
+}
+
+#card #tryAgain {
+  display: none;
+  width: 165px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--bg-color-red);
+  color: var(--bg-color-white);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#card #tentativa button {
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--bg-color-red);
+}
+
+#card #tentativa button p {
+  position: relative;
+  color: var(--bg-color-white);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+button:hover {
+  box-shadow: 5px 5px 5px var(--font-color-yellow);
+  background-color: var(--font-color-yellow);
+  text-shadow: 0 0 5px var(--font-color-black);
+}
+
+#pensando {
+  z-index: 2;
+  display: block;
+}
+#acertou {
+  z-index: 1;
+  display: none;
+}
+#errou {
+  z-index: -1;
+  display: none;
+}
