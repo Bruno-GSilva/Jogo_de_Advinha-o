@@ -52,14 +52,16 @@ body {
   top: 30px;
   max-width: 240px;
   font-size: var(--font-sizeBig);
+  transition: .5s;
 }
 #card #row span {
   color: var(--font-color-yellow);
 }
-#card #images * {
+#card #images{
   position: absolute;
   left: 220px;
   top: 0px;
+  transition: .5s;
 }
 
 #card .text1 p{
@@ -153,4 +155,20 @@ button:hover {
 #errou {
   z-index: -1;
   display: none;
+}
+
+
+@media(max-width:480px){
+  #card{
+    width: 350px;
+  }
+  #card #images * {
+    position: absolute;
+    right: -51px;
+    top: 89px;
+    transition: .5s;
+  }
+  #card h3{
+    font-size: var(--font-sizeMedium);
+  }
 }
