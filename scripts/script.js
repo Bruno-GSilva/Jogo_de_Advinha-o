@@ -13,13 +13,6 @@ const text1 = document.getElementById("textAcertou");
 const text2 = document.getElementById("textErrou");
 const text3 = document.getElementById("textAjuda");
 
-//regras do jogo
-//1 - jogador tem 10 tentativas - ok
-//2 - se o palpite for maior que o resultado mostrar que e maior - ok
-//3 - se o palpite for menor que o resultado mostrar que e menor - ok
-//4 - se o palpite for repetido mostrar que ja foi jogado/tentado - ok
-//5 - se acertar mostrar o resultado e mostrar que ganhou caso contrario que perdeu - ok
-
 let tentativas = 0;
 let tentativasEx = false;
 let randomNum = Math.floor(Math.random() * 100 + 1);
@@ -29,7 +22,6 @@ let palpites = [];
 
 let exibirVitoria = () => {
   acertou.style.zIndex = 2;
-  // acertou.style.scale = .8;
   acertou.style.display = "block";
   errou.style.display = "none";
   pensando.style.display = "none";
@@ -39,7 +31,6 @@ let exibirVitoria = () => {
 };
 let exibirDerrota = () => {
   errou.style.zIndex = 2;
-  // errou.style.scale = .8;
   errou.style.display = "block";
   acertou.style.display = "none";
   pensando.style.display = "none";
@@ -51,7 +42,6 @@ let exibirDerrota = () => {
 };
 let exibirPensando = () => {
   pensando.style.zIndex = 2;
-  // pensando.style.scale = .8;
   pensando.style.display = "block";
   acertou.style.display = "none";
   errou.style.display = "none";
@@ -112,5 +102,3 @@ btn2.addEventListener("click", (event) => {
     pensando.style.scale = 0.8;
   }
 });
-
-//responsivo
