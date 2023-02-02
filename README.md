@@ -17,3 +17,6 @@
 <p>O jogo também possui um botão para realizar suas tentativas e um botão para recomeçar o jogo caso você perca.</p> 
 <h3>Design Responsivo:</h3> 
 <p>O jogo possui um design responsivo básico, possibilitando assim uma melhor visualização em diferentes tamanhos de tela.</p>
+
+<h3>link para acessar o jogo</h3>
+<p>https://bruno-gsilva.github.io/JogoDaBia/</p>
