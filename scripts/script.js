@@ -62,17 +62,20 @@ let exibirPensando = () => {
 };
 
 let verificarNum = (num) => {
-
   if (palpites.includes(num)) {
     console.log(`esse voce ja tentou ${num}`);
   } else {
     palpites.push(num);
-    palpites.length < 2? Mostrarpalpites.append(`${num} - `): Mostrarpalpites.append(num)
+    palpites.length < 2
+      ? Mostrarpalpites.append(`${num} - `)
+      : Mostrarpalpites.append(num);
   }
 
   if (num == numeroCerto) {
     exibirVitoria();
-    setTimeout(function () { window.location.reload(true) }, 3500)
+    setTimeout(function () {
+      window.location.reload(true);
+    }, 3500);
     respostaCerta.innerHTML = Number(numeroCerto);
   }
 };
@@ -101,13 +104,12 @@ btn2.addEventListener("click", (event) => {
     ? (text3.innerHTML = "Eu acho que e um pouco maior ...")
     : (text3.innerHTML = "Eu acho que e um pouco menor ...");
   console.log(palpites);
+
+  if (card.offsetWidth === 350) {
+    acertou.style.scale = 0.8;
+    errou.style.scale = 0.8;
+    pensando.style.scale = 0.8;
+  }
 });
 
 //responsivo
-window.addEventListener("load", () => {
-  card.offsetWidth === 350
-    ? ((acertou.style.scale = 0.8),
-      (errou.style.scale = 0.8),
-      (pensando.style.scale = 0.8))
-    : console.log("deu errado");
-});
