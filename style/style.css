@@ -169,6 +169,7 @@ button:hover {
     transition: .5s;
   }
   #card h3{
-    font-size: var(--font-sizeMedium);
+    font-size: calc(6px + var(--font-sizeMedium));
+    max-width: 300px;
   }
 }

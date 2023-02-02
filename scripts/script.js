@@ -1,7 +1,7 @@
 const pensando = document.getElementById("pensando");
 const acertou = document.getElementById("acertou");
 const errou = document.getElementById("errou");
-const card = document.getElementById("card")
+const card = document.getElementById("card");
 const respostaCerta = document.getElementById("respostaCerta");
 const respostaCerta1 = document.getElementById("respostaCerta1");
 const btn1 = document.getElementById("tryAgain");
@@ -35,8 +35,8 @@ let exibirVitoria = () => {
   pensando.style.display = "none";
   text1.style.display = "block";
   text2.style.display = "none";
-  text3.style.display = "none"
-}
+  text3.style.display = "none";
+};
 let exibirDerrota = () => {
   errou.style.zIndex = 2;
   // errou.style.scale = .8;
@@ -45,10 +45,10 @@ let exibirDerrota = () => {
   pensando.style.display = "none";
   text1.style.display = "none";
   text2.style.display = "block";
-  text3.style.display = "none"
+  text3.style.display = "none";
   btn1.style.display = "block";
   tentativa.style.display = "none";
-}
+};
 let exibirPensando = () => {
   pensando.style.zIndex = 2;
   // pensando.style.scale = .8;
@@ -59,46 +59,55 @@ let exibirPensando = () => {
   text2.style.display = "none";
   btn1.style.display = "none";
   tentativa.style.display = "flex";
-}
+};
 
 let verificarNum = (num) => {
-  palpites.includes(num) ? console.log("esse voce ja tentou"):palpites.push(Number(palpite.value));
-  palpites.length <= 9?Mostrarpalpites.append(palpite.value + " - "):Mostrarpalpites.append(palpite.value)
-  if (num == numeroCerto) {
-    exibirVitoria()
-    // setTimeout(function () { window.location.reload(true) }, 3500)
-    respostaCerta.innerHTML = (Number(numeroCerto))
+
+  if (palpites.includes(num)) {
+    console.log(`esse voce ja tentou ${num}`);
+  } else {
+    palpites.push(num);
+    palpites.length < 2? Mostrarpalpites.append(`${num} - `): Mostrarpalpites.append(num)
   }
-}
+
+  if (num == numeroCerto) {
+    exibirVitoria();
+    setTimeout(function () { window.location.reload(true) }, 3500)
+    respostaCerta.innerHTML = Number(numeroCerto);
+  }
+};
 
 btn1.addEventListener("click", () => {
   tentativas = 0;
-  tentativasEx = false
+  tentativasEx = false;
   palpites.length = 0;
-  exibirPensando()
-  Mostrarpalpites.innerHTML = " "
-})
+  exibirPensando();
+  Mostrarpalpites.innerHTML = " ";
+});
 
 btn2.addEventListener("click", (event) => {
   event.preventDefault();
 
   verificarNum(Number(palpite.value));
 
-  palpites.length <= 9? tentativas++:(
-  tentativasEx = true,
-  exibirDerrota(),
-  respostaCerta1.innerHTML = (Number(numeroCerto)),
-  console.log("voce exedeu as tentativas")
-)
-  palpite.value < numeroCerto ? text3.innerHTML = ("Eu acho que e um pouco maior ...") : text3.innerHTML = ("Eu acho que e um pouco menor ...")
+  palpites.length < 2
+    ? tentativas++
+    : ((tentativasEx = true),
+      exibirDerrota(),
+      (respostaCerta1.innerHTML = Number(numeroCerto)),
+      console.log("voce exedeu as tentativas"));
 
+  palpite.value < numeroCerto
+    ? (text3.innerHTML = "Eu acho que e um pouco maior ...")
+    : (text3.innerHTML = "Eu acho que e um pouco menor ...");
+  console.log(palpites);
 });
 
 //responsivo
-window.addEventListener('load',()=>{
-  card.offsetWidth === 350?(
-   acertou.style.scale = .8, 
-   errou.style.scale = .8 ,
-   pensando.style.scale = .8)
-  :console.log("deu errado")
-})
+window.addEventListener("load", () => {
+  card.offsetWidth === 350
+    ? ((acertou.style.scale = 0.8),
+      (errou.style.scale = 0.8),
+      (pensando.style.scale = 0.8))
+    : console.log("deu errado");
+});
