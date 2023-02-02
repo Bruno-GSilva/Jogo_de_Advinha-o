@@ -57,6 +57,7 @@ let exibirPensando = () => {
   errou.style.display = "none";
   text1.style.display = "none";
   text2.style.display = "none";
+  text3.style.display = "block";
   btn1.style.display = "none";
   tentativa.style.display = "flex";
 };
