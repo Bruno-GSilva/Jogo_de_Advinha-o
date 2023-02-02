@@ -66,7 +66,7 @@ let verificarNum = (num) => {
     console.log(`esse voce ja tentou ${num}`);
   } else {
     palpites.push(num);
-    palpites.length < 2
+    palpites.length < 10
       ? Mostrarpalpites.append(`${num} - `)
       : Mostrarpalpites.append(num);
   }
@@ -93,7 +93,7 @@ btn2.addEventListener("click", (event) => {
 
   verificarNum(Number(palpite.value));
 
-  palpites.length < 2
+  palpites.length < 10
     ? tentativas++
     : ((tentativasEx = true),
       exibirDerrota(),
