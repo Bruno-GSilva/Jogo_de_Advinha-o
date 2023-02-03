@@ -12,15 +12,15 @@
 <ol> 
 <li>Tela de vitória: será apresentada quando você acertar o número escolhido pela bia.
 <br><br>
-<img src="https://user-images.githubusercontent.com/117231088/216452617-03dd169c-8710-4d2d-b34e-a8c257de679d.jpg"></li>
+<img src="https://user-images.githubusercontent.com/117231088/216452617-03dd169c-8710-4d2d-b34e-a8c257de679d.jpg" style="width:250px; aspect-radio:1;"></li>
 
 <li>Tela de derrota: será apresentada caso você não acerte o número escolhido pela bia em 10 tentativas.
 <br><br>
-<img src="https://user-images.githubusercontent.com/117231088/216453121-6238d38e-9a3a-425a-a3b7-2ecfe14ce6d8.jpg">
+<img src="https://user-images.githubusercontent.com/117231088/216453121-6238d38e-9a3a-425a-a3b7-2ecfe14ce6d8.jpg" style="width:250px; aspect-radio:1;">
 </li> 
 <li>Tela de tentativas: será a tela principal do jogo, onde você poderá fazer suas tentativas.
 <br><br>
-<img src="https://user-images.githubusercontent.com/117231088/216453578-1755bdc1-be2a-4c7a-a1e7-2c06c32ee572.jpg">
+<img src="https://user-images.githubusercontent.com/117231088/216453578-1755bdc1-be2a-4c7a-a1e7-2c06c32ee572.jpg" style="width:250px; aspect-radio:1;">
 </li> 
 </ol> 
 <p>O jogo também possui um botão para realizar suas tentativas e um botão para recomeçar o jogo caso você perca.</p> 
